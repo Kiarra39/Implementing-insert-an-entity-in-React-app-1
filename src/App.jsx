@@ -1,13 +1,21 @@
 // src/App.jsx
 
+
 import React from 'react';
-import Home from './Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import Home from './Home'; 
+import AddBook from './components/AddBook';
 import './App.css'; // Import global styles
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add-book" element={<AddBook />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
